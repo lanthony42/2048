@@ -72,11 +72,18 @@ class Game:
             self.game_over = True
             return
 
+        r = (sum(num == 2 for row in self.grid for num in row) /
+             (WIDTH * HEIGHT))
+        if random.random() > 1 - 0.4 * r:
+            num = 4
+        else:
+            num = 2
+
         for i, row in enumerate(self.grid):
             for j, _ in enumerate(row):
                 if not self.grid[i][j]:
                     if not n:
-                        self.grid[i][j] = 2
+                        self.grid[i][j] = num
                         return
                     else:
                         n -= 1
