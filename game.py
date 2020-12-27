@@ -49,8 +49,29 @@ class Game:
         self.screen.fill((0, 0, 0))
         for y, row in enumerate(self.grid):
             for x, num in enumerate(row):
-                if num:
-                    colour = (200, 150, 120)
+                if num == 2:
+                    colour = (238, 228, 218)
+                elif num == 4:
+                    colour = (238, 225, 201)
+                elif num == 8:
+                    colour = (243, 178, 122)
+                elif num == 16:
+                    colour = (246, 150, 100)
+                elif num == 32:
+                    colour = (247, 124, 95)
+                elif num == 64:
+                    colour = (247, 95, 59)
+                elif num == 128:
+                    colour = (237, 208, 115)
+                elif num == 256:
+                    colour = (237, 204, 97)
+                elif num == 512:
+                    colour = (237, 200, 80)
+                elif num == 1024:
+                    colour = (237, 197, 63)
+                elif num == 2048:
+                    colour = (237, 194, 46)
+
                 else:
                     colour = (100, 100, 100)
                     num = ''
